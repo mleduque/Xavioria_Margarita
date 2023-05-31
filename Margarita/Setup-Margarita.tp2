@@ -1,0 +1,36 @@
+BACKUP ~Margarita/backup~
+AUTHOR ~Xavioria (rlbecker11@yahoo.com)~
+BEGIN ~Margarita for Baldur's Gate: Enhanced Edition~
+
+// This adds Margarita herself to the game
+
+COPY ~Margarita/RL#MARG.cre~ ~Override/RL#MARG.cre~
+SAY NAME1 ~Margarita~
+SAY NAME2 ~Margarita~
+
+// Margarita's Biography
+
+SAY BIO ~When asked about her past, MARGARITA becomes defensive and fidgety. She mentions nameless people and countless places that seem to make her either older than she seems or somewhat loony. The Halfling does seem to mention one thing consistently, and that would be her trade as a courier. You find that after some more prodding, Margarita is constantly trying to shift the subject to something more neutral; implyng that something horrific may have happened in her past, or she's deliberately hiding something from you.~
+
+// Dialogue Scripts
+
+COMPILE ~Margarita/Scripts/RL#MARG.baf~
+
+// These lines are for Margarita's Dialogs
+
+COMPILE ~Margarita/Dialogue/RL#MARG.d~
+COMPILE ~Margarita/Dialogue/RL#MARGJ.d~
+COMPILE ~Margarita/Dialogue/RL#MARGB.d~
+
+// Margarita shall appear here
+
+EXTEND_TOP ~AR5403.bcs~ ~Margarita/Scripts/AR5403.baf~
+
+// Margarita's Scripts
+
+APPEND ~pdialog.2da~
+~RL#MARG RL#MARGP RL#MARGJ RL#MARGD RL#MARG25P RL#MARG25J RL#MARG25D RL#MARG25~
+UNLESS ~RL#MARG~
+APPEND ~interdia.2da~
+~RL#MARG RL#MARGB RL#MARGB25~
+UNLESS ~RL#MARG~

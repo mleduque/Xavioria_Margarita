@@ -1,0 +1,16 @@
+IF
+Global("RL#MARGExists","AR5403",0)
+Global("Chapter","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("RL#MARGExists","AR5403",1)
+CreateCreature("RL#MARG",[1618.0295],2)
+END
+
+IF
+Global("RL#MARGExists","AR5403",1)
+GlobalGT("Chapter","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("RL#MARGExists","AR5403",0)
+END

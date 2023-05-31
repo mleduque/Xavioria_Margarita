@@ -1,0 +1,87 @@
+IF
+InParty(Myself)
+See(Player1)
+AreaCheck("AR5000")
+CombatCounter(0)
+!See([ENEMY])
+Global("Chapter","GLOBAL",3)
+Global("NashkelMinesExit","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("NashkelMinesExit","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+See(Player1)
+AreaCheck("AR5400")
+CombatCounter(0)
+!See([ENEMY])
+Global("Chapter","GLOBAL",3)
+Global("NashkelMinesExit","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("NashkelMinesExit","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+See(Player1)
+Global("NashkelMinesExit","GLOBAL",1)
+THEN
+RESPONSE #100
+Interact(Player1)
+END
+
+IF
+InParty(Myself)
+See(Player1)
+AreaCheck("AR4800")
+CombatCounter(0)
+!See([ENEMY])
+Global("NashkelMinesExit","GLOBAL",2)
+Global("NimbulDeathvariable","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("NashkelMinesExit","GLOBAL",3)
+SetGlobal("NimbulDeathvariable","GLOBAL",2)
+END
+
+IF
+InParty(Myself)
+See(Player1)
+Global("NashkelMinesExit","GLOBAL",3)
+Global("NimbulDeathvariable","GLOBAL",2)
+THEN
+RESPONSE #100
+Interact(Player1)
+END
+
+IF
+InParty(Myself)
+See(Player1)
+Global("NashkelMinesExit","GLOBAL",5)
+THEN
+RESPONSE #100
+Interact(Player1)
+END
+
+IF
+InParty(Myself)
+See(Player1)
+AreaCheck("AR1200")
+GlobalLT("MargaritaBackfire","GLOBAL",1)
+Global("NashkelMinesExit","GLOBAL",6)
+THEN
+RESPONSE #100
+SetGlobal("NashkelMinesExit","GLOBAL",7)
+END
+
+IF
+InParty(Myself)
+See(Player1)
+Global("NashkelMinesExit","GLOBAL",7)
+THEN
+RESPONSE #100
+Interact(Player1)
+END
